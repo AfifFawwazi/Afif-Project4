@@ -1,4 +1,4 @@
-import { Ingredient } from "../shopping-list/shopping-edit/ingredient.model";
+import { Ingredient } from '../shared/ingredient.model';
 
 export class Recipe
 {
@@ -6,12 +6,13 @@ export class Recipe
     public description:string;
     public imagePath:string;
     public ingredient:Ingredient[];
-
-    constructor(name:string,desc:string,imagePath:string, ingredient:Ingredient[])
+    
+    constructor(name:string,desc:string,imagePath:string,ingredient:Ingredient[])
     {
-        this.name=name;
-        this.description=desc;
-        this.imagePath=imagePath;
-        this.ingredient=ingredient;
+        this.name = name;
+        this.description = desc;
+        this.imagePath = imagePath;
+        this.ingredient = ingredient;
     }
+
 }

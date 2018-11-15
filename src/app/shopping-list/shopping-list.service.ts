@@ -5,25 +5,23 @@ import { Ingredient } from '../shared/ingredient.model';
   providedIn: 'root'
 })
 export class ShoppingListService {
-  IngredentChange = new EventEmitter<Ingredient[]>();
-  
-  private ingredients:Ingredient[]=[
+  IngredientChange = new EventEmitter<Ingredient[]>();
+
+  ingredients:Ingredient[]=[
     new Ingredient('Apples',23),
-    new Ingredient('Tomato',10),
-    
+    new Ingredient('Tomato',23),
   ];
+
 constructor() { }
 getIngredient(){
   return this.ingredients.slice();
 }
-
 addIngredient(ingredient:Ingredient){
   this.ingredients.push(ingredient);
-  this.IngredentChange.emit(this.ingredients.slice());
+  this.IngredientChange.emit(this.ingredients.slice());
 }
-
-addIngredients(ingredients:Ingredient[]){
+addIngredients(ingredients : Ingredient[]){
   this.ingredients.push(...ingredients);
-  this.IngredentChange.emit(this.ingredients.slice());
+  this.IngredientChange.emit(this.ingredients.slice());
 }
 }
